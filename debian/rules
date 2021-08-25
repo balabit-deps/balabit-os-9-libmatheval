@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+
+%:
+	dh $@
+
+execute_before_dh_autoreconf:
+	touch config/config.rpath
+
+override_dh_installchangelogs:
+	dh_installchangelogs NEWS
